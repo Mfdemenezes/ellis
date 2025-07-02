@@ -1,12 +1,17 @@
 version: '3.8'
 
 services:
-  app:
+  app:  # aplicações que serão executadas 
+    # build a imagem
     build: .
     container_name: ellis-app
+   # Define o diretório de trabalho dentro do container
     working_dir: /app
+    # Define os volumes que serão montados
     volumes:
       - ./:/app
+    # Define as portas que serão expostas
     ports:
       - "8000:8000"
+    # essa linha já foi definida pelo dockerfile
     # command: ["sh", "-c", "comando-para-iniciar-sua-app"]
